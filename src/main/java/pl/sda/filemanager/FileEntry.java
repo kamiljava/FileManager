@@ -1,13 +1,16 @@
-package pl.sda.jackson;
+package pl.sda.filemanager;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 public class FileEntry {
-
     private String path;
     private Set<String> tags;
 
+    public FileEntry() {
+        tags = new HashSet<>();
+    }
     public String getPath() {
         return path;
     }
@@ -24,12 +27,8 @@ public class FileEntry {
         this.tags = tags;
     }
 
-    @Override
-    public String toString() {
-        return "FileEntry{" +
-                "path='" + path + '\'' +
-                ", tags=" + tags +
-                '}';
+    public void addTag (String tag){
+        tags.add(tag);
     }
 
     @Override
@@ -44,5 +43,13 @@ public class FileEntry {
     @Override
     public int hashCode() {
         return Objects.hash(path, tags);
+    }
+
+    @Override
+    public String toString() {
+        return "FileEntry{" +
+                "path='" + path + '\'' +
+                ", tags=" + tags +
+                '}';
     }
 }
