@@ -7,6 +7,35 @@
     <groupId>pl.sda</groupId>
     <artifactId>file-manager</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+    </dependencies>
+    <properties>
+        <maven-compiler-plugin.version>
+            3.8.0
+        </maven-compiler-plugin.version>
+        <java.version>
+            1.8
+        </java.version>
+        <jackson.version>
+            2.9.8
+        </jackson.version>
+    </properties>
 </project>
