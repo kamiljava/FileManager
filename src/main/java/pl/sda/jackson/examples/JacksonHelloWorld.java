@@ -1,7 +1,8 @@
-package pl.sda.jackson;
+package pl.sda.jackson.examples;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import pl.sda.jackson.examples.User;
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -25,5 +26,6 @@ public class JacksonHelloWorld {
 
         String marianna = objectMapper.writeValueAsString(new User("Marianna"));
         System.out.println(marianna);
+
     }
 }
